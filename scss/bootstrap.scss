@@ -52,9 +52,3 @@
 // Utilities
 @import "utilities/api";
 // scss-docs-end import-stack
-
-.test {
-  @include utl(d-inline-flex);
-  @include utl(p-4);
-  @include utl(mb-md-3);
-}
