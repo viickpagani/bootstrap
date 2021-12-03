@@ -51,5 +51,10 @@
 
 // Utilities
 @import "utilities/api";
-@import "utilities/mixin";
 // scss-docs-end import-stack
+
+.test {
+  @include utl(d-inline-flex);
+  @include utl(p-4);
+  @include utl(mb-md-3);
+}
