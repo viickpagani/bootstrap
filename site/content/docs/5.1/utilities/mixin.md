@@ -58,6 +58,34 @@ Which outputs to the following:
 }
 ```
 
+## Working responsively
+
+While you can include responsive utilities individually, Sass will generate multiple media queries each time you include a responsive utility with the `utl()` mixin. When you have multiple responsive values, use media queries to group them.
+
+```scss
+// Avoid this
+.test {
+  @include utl(p-3);
+  @include utl(p-md-5);
+  @include utl(mb-3);
+  @include utl(mb-md-5);
+}
+
+// Do this
+.test {
+  @include utl(p-3);
+  @include utl(mb-3);
+
+  @include media-breakpoint-up(md) {
+    @include utl(p-5);
+    @include utl(mb-5);
+  }
+}
+```
+
+This way, you only output one media query in your compiled CSS and no further optimization or action is needed to clean up the output.
+
+
 ## Custom setup
 
 Want to use only the utilities and mixin in your own project? In your project's Sass file, include the following:
